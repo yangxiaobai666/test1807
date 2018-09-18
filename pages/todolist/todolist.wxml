@@ -1,0 +1,19 @@
+<import src="item.wxml" />
+<input bindinput='input' bindconfirm='add' value='{{msg}}'></input>
+{{msg}}
+<view> <switch checked bindchange="switch1Change"  /></view>
+
+<input bindinput='input1' value='{{str}}'></input>
+
+<view wx:for="{{list}}" wx:if="{{flag}}" wx:key="{{index}}">
+<view>
+<view class='d'>
+<template is="xm" data="{{...item,index}}"> </template>
+{{item.txt}}
+<button bindtap='del' data-index="{{index}}">删除</button>
+<button bindtap='add1' data-index="{{index}}">修改</button>
+</view>
+</view>
+
+</view>
+共有{{count}}项已完成

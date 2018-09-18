@@ -1,0 +1,9 @@
+<!--pages/fire/fire.wxml-->
+<import src="lunbo.wxml"/>
+<view wx:for="{{list}}" wx:key="{{item.id}}">
+<template is="lunbo" data="{{...item,index}}"></template>
+
+<view>
+<image src="{{item.cover.origin}}"></image>
+</view>
+</view>
