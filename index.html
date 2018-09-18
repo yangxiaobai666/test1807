@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <div id = "box">1111111</div>
+    <script>
+        // 移动端的几个触摸事件
+        box.addEventListener("touchstart",(e)=>{
+            // 他相当于点击事件；
+            console.log(22222);
+            box.innerHTML = e.toucher.length
+            // 查看当前在这个元素上有几个手指；
+            box.addEventListener("touchmove",()=>{
+                // 在屏幕上进行移动；
+                box.innerHTML = e.targetTouches.length
+                // 查看当前在这个元素上移动的时候有几个手指；
+                console.log("touch move");
+            })
+            box.addEventListener("touchend",()=>{
+                // 事件结束
+                console.log("touch end")
+            })
+        })
+        box.addEventListener("click",()=>{
+            console.log(11111)
+        })
+    
+    </script>
+</body>
+</html>
